@@ -33,6 +33,7 @@
         <jimureport.version>1.7.8</jimureport.version>
         <fastjson.version>2.0.51</fastjson.version>
         <hutool-5.version>5.8.29</hutool-5.version>
+        <hutool-5.version>5.8.29</hutool-5.version>
     </properties>
     <dependencies>
 
@@ -56,7 +57,11 @@
             <artifactId>fastjson</artifactId>
             <version>${fastjson.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${hutool-5.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
@@ -78,7 +83,10 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

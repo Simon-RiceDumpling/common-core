@@ -1,15 +1,16 @@
-package com.utils.http;
+package com.simon.core.utils.http;
 
 
-import com.atlas.framework.core.enums.MethodType;
-import com.atlas.framework.core.vo.ExecuteResult;
+import com.alibaba.fastjson2.JSONObject;
+import com.aliyuncs.http.MethodType;
+import com.simon.core.vo.ExecuteResult;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
 
 @Component
-public class AtlasHttpClient {
+public class SimonHttpClient {
 
     /**
      * 函数式HTTP调用
@@ -70,13 +71,13 @@ public class AtlasHttpClient {
     // 使用示例
     public void example() {
         // 超简洁的调用方式
-        ExecuteResult<JSONObject> result = AtlasHttpClient.call(JSONObject.class)
+        ExecuteResult<JSONObject> result = SimonHttpClient.call(JSONObject.class)
                 .get("https://api.example.com/data")
                 .header("Authorization", "Bearer token")
                 .param("id", "123")
                 .execute();
 
-        ExecuteResult<JSONObject> postResult = AtlasHttpClient.call(JSONObject.class)
+        ExecuteResult<JSONObject> postResult = SimonHttpClient.call(JSONObject.class)
                 .post("https://api.example.com/submit")
                 .header("Content-Type", "application/json")
                 .body(new JSONObject().fluentPut("name", "test"))

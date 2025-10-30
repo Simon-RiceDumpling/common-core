@@ -1,13 +1,13 @@
-package com.utils.http;
+package com.simon.core.utils.http;
 
+import cn.hutool.extra.spring.SpringUtil;
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONObject;
-import com.atlas.framework.common.util.json.JsonUtils;
-import com.atlas.framework.common.util.spring.SpringUtils;
-import com.atlas.framework.core.config.HttpProxyConfig;
-import com.atlas.framework.core.constant.AtlasConstant;
-import com.atlas.framework.core.enums.MethodType;
-import com.atlas.framework.core.vo.ExecuteResult;
+import com.aliyuncs.http.MethodType;
+import com.simon.core.confiog.HttpProxyConfigIpIdea;
+import com.simon.core.constant.SimonConstant;
+import com.simon.core.utils.JsonUtils;
+import com.simon.core.vo.ExecuteResult;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpHost;
 import org.apache.http.auth.AuthScope;
@@ -33,7 +33,7 @@ import java.util.Map;
  * @Date 2025/4/15 12:12
  */
 @Slf4j
-public class AtlasHttpProxyUtils {
+public class SimonHttpProxyUtils {
 
     // ==================== 便捷方法 ====================
 
@@ -102,9 +102,9 @@ public class AtlasHttpProxyUtils {
                 requestBody instanceof JSONObject ? (JSONObject) requestBody :
                         new JSONObject(JSON.parseObject(JSON.toJSONString(requestBody))));
         JSONObject response = result.getData() != null ? result.getData() : new JSONObject();
-        response.put(AtlasConstant.httpCode, result.getHttpCode());
+        response.put(SimonConstant.httpCode, result.getHttpCode());
         if (!result.isSuccess()) {
-            response.put(AtlasConstant.errorMsg, result.getMessage());
+            response.put(SimonConstant.errorMsg, result.getMessage());
         }
         return response;
     }
@@ -192,7 +192,7 @@ public class AtlasHttpProxyUtils {
     }
 
     private static CloseableHttpClient createHttpClientWithProxy() {
-        HttpProxyConfig proxyConfig = SpringUtils.getBean(HttpProxyConfig.class);
+        HttpProxyConfigIpIdea proxyConfig = SpringUtil.getBean(HttpProxyConfigIpIdea.class);
         HttpHost proxy = new HttpHost(proxyConfig.getProxyHost(), proxyConfig.getProxyPort());
 
         CredentialsProvider credentialsProvider = new BasicCredentialsProvider();

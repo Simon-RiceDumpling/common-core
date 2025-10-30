@@ -1,16 +1,16 @@
-package com.utils.http;
+package com.simon.core.utils.http;
 
 
-import com.alibaba.csp.sentinel.util.StringUtil;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson2.JSONObject;
-import com.atlas.framework.core.constant.AtlasConstant;
+import com.simon.core.constant.SimonConstant;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpMethodBase;
 import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.httpclient.methods.PostMethod;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -32,7 +32,7 @@ import java.util.function.Consumer;
  * @Date 2025/4/15 12:12
  */
 @Slf4j
-public class AtlasHttpUtils {
+public class SimonHttpUtils {
 
 
     /**
@@ -98,7 +98,7 @@ public class AtlasHttpUtils {
     @SneakyThrows
     public static JSONObject doGetExecuteRequestParams(String baseUrl, Map<String, Object> params, Integer retryCount) {
         JSONObject result = (JSONObject) doGetExecuteRequestParams(baseUrl, params, JSONObject.class);
-        if (result.getInteger(AtlasConstant.httpCode) != 200 && retryCount > 0) {
+        if (result.getInteger(SimonConstant.httpCode) != 200 && retryCount > 0) {
             return doGetExecuteRequestParams(baseUrl, params, retryCount - 1);
         }
         return result;
@@ -130,7 +130,7 @@ public class AtlasHttpUtils {
         int httpCode = httpClient.executeMethod(httpMethod);
         //响应转码 统一转为utf-8
         JSONObject jsonObject = parseJson(httpMethod);
-        jsonObject.put(AtlasConstant.httpCode, httpCode);
+        jsonObject.put(SimonConstant.httpCode, httpCode);
         log.info("url->:【{}】响应结果:【{}】 ", url, jsonObject);
         return JSONObject.parseObject(jsonObject.toString(), tClass);
     }
@@ -145,7 +145,7 @@ public class AtlasHttpUtils {
             if (responseBodyAsString.equals(new String(responseBodyAsString.getBytes("ISO-8859-1"), "ISO-8859-1"))) {
                 responseBodyAsString = new String(responseBodyAsString.getBytes("ISO-8859-1"), "utf-8");
             }
-            if (StringUtil.isNotBlank(responseBodyAsString) && isJson(responseBodyAsString)) {
+            if (StringUtils.isNotBlank(responseBodyAsString) && isJson(responseBodyAsString)) {
                 return JSONObject.from(JSON.parseObject(responseBodyAsString));
             }
             JSONObject jsonObject = new JSONObject();

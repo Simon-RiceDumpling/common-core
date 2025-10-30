@@ -1,11 +1,12 @@
-package com.utils.http;
+package com.simon.core.utils.http;
 
 
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpUtil;
 import com.alibaba.fastjson2.JSONObject;
-import com.atlas.framework.core.enums.MethodType;
-import com.atlas.framework.core.vo.ExecuteResult;
+
+import com.aliyuncs.http.MethodType;
+import com.simon.core.vo.ExecuteResult;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.HashMap;
