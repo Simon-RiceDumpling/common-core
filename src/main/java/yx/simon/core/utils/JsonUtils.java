@@ -1,4 +1,4 @@
-package com.simon.core.utils;
+package yx.simon.core.utils;
 
 import cn.hutool.core.util.ArrayUtil;
 import cn.hutool.core.util.StrUtil;

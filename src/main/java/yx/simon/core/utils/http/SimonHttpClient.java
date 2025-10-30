@@ -1,9 +1,9 @@
-package com.simon.core.utils.http;
+package yx.simon.core.utils.http;
 
 
 import com.alibaba.fastjson2.JSONObject;
 import com.aliyuncs.http.MethodType;
-import com.simon.core.vo.ExecuteResult;
+import yx.simon.core.vo.ExecuteResult;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;

@@ -1,13 +1,13 @@
-package com.simon.core.utils.http;
+package yx.simon.core.utils.http;
 
 import cn.hutool.extra.spring.SpringUtil;
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONObject;
 import com.aliyuncs.http.MethodType;
-import com.simon.core.confiog.HttpProxyConfigIpIdea;
-import com.simon.core.constant.SimonConstant;
-import com.simon.core.utils.JsonUtils;
-import com.simon.core.vo.ExecuteResult;
+import yx.simon.core.confiog.HttpProxyConfigIpIdea;
+import yx.simon.core.constant.SimonConstant;
+import yx.simon.core.utils.JsonUtils;
+import yx.simon.core.vo.ExecuteResult;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpHost;
 import org.apache.http.auth.AuthScope;

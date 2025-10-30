@@ -1,4 +1,4 @@
-package com.simon.core.confiog;
+package yx.simon.core.confiog;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;

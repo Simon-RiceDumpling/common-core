@@ -1,4 +1,4 @@
-package com.simon.core.utils;
+package yx.simon.core.utils;
 
 /**
  * @program: common-core

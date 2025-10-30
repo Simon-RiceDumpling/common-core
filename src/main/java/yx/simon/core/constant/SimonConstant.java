@@ -1,4 +1,4 @@
-package com.simon.core.constant;
+package yx.simon.core.constant;
 
 /**
  * @program: common-core

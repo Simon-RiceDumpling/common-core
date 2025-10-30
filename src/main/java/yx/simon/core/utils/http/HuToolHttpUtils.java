@@ -1,4 +1,4 @@
-package com.simon.core.utils.http;
+package yx.simon.core.utils.http;
 
 
 import cn.hutool.http.HttpRequest;
@@ -6,7 +6,7 @@ import cn.hutool.http.HttpUtil;
 import com.alibaba.fastjson2.JSONObject;
 
 import com.aliyuncs.http.MethodType;
-import com.simon.core.vo.ExecuteResult;
+import yx.simon.core.vo.ExecuteResult;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.HashMap;

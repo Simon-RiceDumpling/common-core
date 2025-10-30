@@ -1,10 +1,10 @@
-package com.simon.core.utils.http;
+package yx.simon.core.utils.http;
 
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson2.JSONObject;
 import com.aliyuncs.http.MethodType;
-import com.simon.core.vo.ExecuteResult;
+import yx.simon.core.vo.ExecuteResult;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.httpclient.HttpClient;

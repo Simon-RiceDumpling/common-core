@@ -1,4 +1,4 @@
-package com.simon.core.vo;
+package yx.simon.core.vo;
 
 import lombok.Data;
 
