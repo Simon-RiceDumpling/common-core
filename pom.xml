@@ -8,9 +8,10 @@
         <version>3.5.7</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>org.simon</groupId>
+    <groupId>com.github.Simon-RiceDumpling</groupId>
     <artifactId>common-core</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
     <name>common-core</name>
     <description>common-core</description>
     <url/>
