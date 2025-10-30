@@ -10,11 +10,15 @@
     <description>公共工具</description>
 
     <properties>
-        <redisson.version>3.17.3</redisson.version>
-        <rocketmq.version>2.3.0</rocketmq.version>
+        <lombok.version>1.18.34</lombok.version>
     </properties>
 
     <dependencies>
 
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
     </dependencies>
 </project>
