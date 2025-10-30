@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.github.Simon-RiceDumpling</groupId>
     <artifactId>common-core</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+
     <packaging>jar</packaging>
     <name>common-core</name>
     <description>common-core</description>
@@ -52,12 +52,18 @@
             <groupId>org.jeecgframework.jimureport</groupId>
             <artifactId>jimureport-spring-boot3-starter-fastjson2</artifactId>
             <version>${jimureport.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>gui.ava</groupId>
+                    <artifactId>html2image</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>${fastjson.version}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.alibaba</groupId>-->
+<!--            <artifactId>fastjson</artifactId>-->
+<!--            <version>${fastjson.version}</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
